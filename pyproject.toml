@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ab_utils"
+version= "0.0.1"
+description = "Alex's utility functions for genomic data science"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "pandas-checks",
+    "statannotations",
+]
+dynamic = ["readme"]
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"], content-type = "text/markdown"}
+
+[tool.setuptools.package-data]
+style = ["*.mplstyle"]
