@@ -8,7 +8,7 @@ def mock_snakemake(
     rulename,
     root_dir=None,
     configfiles=None,
-    submodule_dir="workflow/submodules/pypsa-eur",
+    submodule_dir="./workflow",
     **wildcards,
 ):
     """
