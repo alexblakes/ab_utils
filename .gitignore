@@ -52,3 +52,6 @@ venv.bak/
 
 # PyPI configuration file
 .pypirc
+# pixi environments
+.pixi/*
+!.pixi/config.toml
