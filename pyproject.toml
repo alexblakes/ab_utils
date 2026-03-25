@@ -20,7 +20,7 @@ dynamic = ["readme"]
 readme = {file = ["README.md"], content-type = "text/markdown"}
 
 [tool.setuptools.package-data]
-style = ["*.mplstyle"]
+"ab_utils.vis.style" = ["*.mplstyle"]
 
 [tool.pixi.workspace]
 channels = ["conda-forge", "bioconda"]
