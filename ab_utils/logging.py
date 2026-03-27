@@ -1,8 +1,8 @@
 import inspect
 import logging
 from pathlib import Path
-from turtle import pd
 
+import pandas as pd
 import pandas_checks as pdc
 
 FORMAT = "[{asci_time}] [{levelname}] || {message}"
