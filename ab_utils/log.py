@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 import pandas_checks as pdc
 
-FORMAT = "[{asctime}] [{levelname}] || {message}"
+FORMAT = "[{asctime}] {levelname} {file} || {message}"
 
 logging.basicConfig(format=FORMAT, style="{", level=logging.INFO)
 logger = logging.getLogger()
