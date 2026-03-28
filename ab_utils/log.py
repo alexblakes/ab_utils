@@ -32,7 +32,7 @@ def get_calling_fn(*ignore: str) -> str | None:
 # Logging setup
 FORMAT = f"[%(asctime)s] %(levelname)s {__file__} || %(message)s"
 
-logging.basicConfig(format=FORMAT, level=logging.INFO)
+logging.basicConfig(format=FORMAT, style='%', level=logging.INFO)
 logger = logging.getLogger()
 
 # Set up logging via Snakemake if possible
