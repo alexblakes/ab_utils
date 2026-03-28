@@ -5,11 +5,6 @@ from pathlib import Path
 import pandas as pd
 import pandas_checks as pdc
 
-FORMAT = "[{asctime}] {levelname} {filename} || {message}"
-
-logging.basicConfig(format=FORMAT, style="{", level=logging.INFO)
-logger = logging.getLogger()
-
 
 def get_calling_fn(*ignore: str) -> str | None:
     """Return the name of the calling function.
@@ -34,6 +29,11 @@ def get_calling_fn(*ignore: str) -> str | None:
 
     return None
 
+# Logging setup
+FORMAT = f"[%(asctime)s] %(levelname)s {__file__} || %(message)s"
+
+logging.basicConfig(format=FORMAT, level=logging.INFO)
+logger = logging.getLogger()
 
 # Set up logging via Snakemake if possible
 try:
