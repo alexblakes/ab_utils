@@ -37,7 +37,6 @@ def mock_snakemake(
 
     import snakemake as sm
     from packaging import version
-    from pypsa.definitions.structures import Dict
     from snakemake import __version__ as sm_version
     from snakemake.api import Workflow
     from snakemake.common import SNAKEFILE_CHOICES
@@ -117,7 +116,7 @@ def mock_snakemake(
         workflow.global_resources = {}
         rule = workflow.get_rule(rulename)
         dag = sm.dag.DAG(workflow, rules=[rule])
-        wc = Dict(wildcards)
+        wc = dict(wildcards)
         job = sm.jobs.Job(rule, dag, wc)
 
         def make_accessable(*ios):
