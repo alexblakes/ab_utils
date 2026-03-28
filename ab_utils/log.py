@@ -53,9 +53,6 @@ else:
 # Pandas checks
 pdc.set_format(precision=4, use_emojis=False)
 
-if not pd.core.config_init.is_terminal():
-    # Use default print function in interactive envs
-    pdc.set_custom_print_fn(None, print_to_stdout=True)
-else:
-    # Use logger in terminal
+# In terminal, send pandas checks to the logger instead of stdout
+if pd.core.config_init.is_terminal():
     pdc.set_custom_print_fn(logger.info, print_to_stdout=False)
