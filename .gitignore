@@ -55,3 +55,4 @@ venv.bak/
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+.snakemake/

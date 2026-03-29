@@ -26,6 +26,9 @@ readme = {file = ["README.md"], content-type = "text/markdown"}
 channels = ["conda-forge", "bioconda"]
 platforms = ["osx-arm64"]
 
+[tool.pixi.dependencies]
+snakemake-minimal = "<=9.16"
+
 [tool.pixi.pypi-dependencies]
 ab_utils = { path = ".", editable = true }
 
