@@ -1,0 +1,3 @@
+[2026-03-30 13:39:11,877] [test_smk_utils.py] INFO || Logging to stderr and '/Users/alex/github/ab_utils/test/test_smk_utils.log' via Snakemake
+[2026-03-30 13:39:12,729] [test_smk_utils.py] INFO || Test INFO message
+[2026-03-30 13:39:12,729] [test_smk_utils.py] DEBUG || Test DEBUG message

@@ -33,3 +33,6 @@ snakemake-minimal = "<=9.16"
 ab_utils = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+test_smk = "snakemake --cores 4 test"
+test_log = "python3 test/test_log.py"
+test = [{task = 'test_smk'}, {task = 'test_log'}]
