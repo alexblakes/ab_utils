@@ -71,18 +71,11 @@ def mock_snakemake(
         workdir = Path.cwd()
 
     try:
-        snakefile = None
         for p in SNAKEFILE_CHOICES:
             p = root_dir / p
             if os.path.exists(p):
                 snakefile = p
                 break
-
-        if snakefile is None:
-            choices = ", ".join(str(root_dir / p) for p in SNAKEFILE_CHOICES)
-            raise FileNotFoundError(
-                f"No Snakefile found. Looked for: {choices}"
-            )
 
         if configfiles is None:
             configfiles = []

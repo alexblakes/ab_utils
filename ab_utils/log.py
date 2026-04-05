@@ -51,10 +51,12 @@ logger.addHandler(stream_handler)
 # Set up logging via Snakemake if possible
 try:
     from snakemake.script import snakemake
-
+    logger.info("Running from Snakemake.")
     file_log = Path(snakemake.log[0]).resolve()
-except (ImportError, IndexError):
-    logger.info("No Snakemake log file detected. Logging to stderr only.")
+except (ImportError):
+    logger.info("Running outside Snakemake. Logging to stderr only.")
+except (IndexError):
+    logger.warning("No Snakemake log file detected. Logging only to stderr.")
 else:
     file_handler = logging.FileHandler(file_log, mode="w")
     file_handler.setFormatter(formatter)
