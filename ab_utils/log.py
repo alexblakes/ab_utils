@@ -52,7 +52,7 @@ logger.addHandler(stream_handler)
 try:
     from snakemake.script import snakemake
     logger.info("Running from Snakemake.")
-    file_log = Path(snakemake.log[0]).resolve()
+    file_log = Path(snakemake.log[0])
 except (ImportError):
     logger.info("Running outside Snakemake. Logging to stderr only.")
 except (IndexError):
