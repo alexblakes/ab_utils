@@ -29,7 +29,7 @@ def assign_from_split(df, col, sep, new_col_names, **kwargs):
     return df.assign(**new_cols_df)
 
 
-def write_out(df, path, verbose=True, *args, **kwargs):
+def write_out(df, path, verbose=True, **kwargs):
     kwargs.setdefault("index", False)
     kwargs.setdefault("sep", "\t")
     kwargs.setdefault("header", True)
@@ -39,6 +39,6 @@ def write_out(df, path, verbose=True, *args, **kwargs):
     if verbose:
         logger.info(f"Writing to {path}")
 
-    df.to_csv(path, *args, **kwargs)
+    df.to_csv(path, **kwargs)
 
     return df
