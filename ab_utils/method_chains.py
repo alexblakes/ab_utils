@@ -32,9 +32,16 @@ def assign_from_split(df, col, sep, new_col_names, **kwargs):
 def write_out(df, path, verbose=True, **kwargs):
     kwargs.setdefault("index", False)
     kwargs.setdefault("sep", "\t")
-    kwargs.setdefault("header", True)
 
-    path = Path(path).resolve().relative_to(Path.cwd())
+    path = Path(path).resolve()
+    try:
+        path = path.relative_to(Path.cwd())
+    except ValueError:
+        logger.warning(
+            f"Path '{path}' is not relative to the current working directory."
+            "Using absolute path instead."
+        )
+        pass
 
     if verbose:
         logger.info(f"Writing to {path}")
