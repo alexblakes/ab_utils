@@ -1,4 +1,9 @@
+import logging
+from pathlib import Path
+
 import pandas as pd
+
+logger = logging.getLogger(__name__)
 
 
 def flatten_columns(df):
@@ -22,3 +27,18 @@ def assign_from_split(df, col, sep, new_col_names, **kwargs):
     split = df[col].str.split(sep).to_list()
     new_cols_df = pd.DataFrame(split, columns=new_col_names, index=df.index, **kwargs)
     return df.assign(**new_cols_df)
+
+
+def write_out(df, path, verbose=True, *args, **kwargs):
+    kwargs.setdefault("index", False)
+    kwargs.setdefault("sep", "\t")
+    kwargs.setdefault("header", True)
+
+    path = Path(path).resolve().relative_to(Path.cwd())
+
+    if verbose:
+        logger.info(f"Writing to {path}")
+
+    df.to_csv(path, *args, **kwargs)
+
+    return df
