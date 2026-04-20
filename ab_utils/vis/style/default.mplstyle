@@ -71,6 +71,16 @@ ytick.minor.pad : 1
 
 # Font Family
 font.family: sans-serif
-font.sans-serif: DejaVu Sans, Arial, Helvetica, Lucida Grande, Verdana, Geneva, Lucid, Avant Garde, sans-serif
-mathtext.fontset : dejavusans
+font.sans-serif: Arial, Helvetica, Lucida Grande, Verdana, Geneva, Lucid, Avant Garde, sans-serif
+mathtext.fontset : Arial
 
+# SVG export now doesn't render font as path, but saves fonts as text objects.
+# This allows for easier integration with MS Office.
+svg.fonttype : none
+
+# Make SVG generation deterministic
+svg.hashsalt : 42
+
+# Avoid type 3 font usage
+pdf.fonttype : 42
+ps.fonttype : 42
