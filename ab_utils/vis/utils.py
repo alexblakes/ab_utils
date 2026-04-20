@@ -19,15 +19,35 @@ def rotate_tick_labels(axis, ax=None, **kwargs):
 
     return ax
 
+
 def configure_annotator(annot, *args, **kwargs):
     kwargs.setdefault("show_test_name", False)
-    kwargs.setdefault("text_format", "simple") # Use "full" for exact P values below the threshold
+    kwargs.setdefault(
+        "text_format", "simple"
+    )  # Use "full" for exact P values below the threshold
     kwargs.setdefault("pvalue_thresholds", [[1e-16, "1e-16"]])
     kwargs.setdefault("pvalue_format_string", "{:.3g}")
     kwargs.setdefault("p_capitalized", True)
-    kwargs.setdefault("p_separators", ("",""))
+    kwargs.setdefault("p_separators", ("", ""))
     kwargs.setdefault("loc", "outside")
     kwargs.setdefault("line_height", 0)
     kwargs.setdefault("line_width", 1)
 
     return annot.configure(*args, **kwargs)
+
+
+def panel_label(ax, s, x=-0.05, y=1.05, **kwargs):
+    kwargs.setdefault("fontsize", 8)
+    kwargs.setdefault("fontweight", "bold")
+    kwargs.setdefault("transform", ax.transAxes)
+    kwargs.setdefault("va", "bottom")
+    kwargs.setdefault("ha", "right")
+
+    ax.text(
+        x,
+        y,
+        s,
+        **kwargs,
+    )
+
+    return ax
