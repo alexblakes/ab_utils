@@ -37,7 +37,7 @@ def configure_annotator(annot, *args, **kwargs):
 
 
 def panel_label(ax, s, x=-0.05, y=1.05, **kwargs):
-    kwargs.setdefault("fontsize", 8)
+    kwargs.setdefault("fontsize", 10)
     kwargs.setdefault("fontweight", "bold")
     kwargs.setdefault("transform", ax.transAxes)
     kwargs.setdefault("va", "bottom")
