@@ -30,6 +30,21 @@ def assign_from_split(df, col, sep, new_col_names, **kwargs):
     )
 
 
+def read_in(path, verbose=True, **kwargs):
+    kwargs.setdefault("sep", "\t")
+
+    path = Path(path).resolve()
+    try:
+        path = path.relative_to(Path.cwd())
+    except ValueError:
+        pass
+
+    if verbose:
+        logger.info(f"Reading from {path}")
+
+    return pd.read_csv(path, **kwargs).check.nrows(check_name=f"Input lines in {path.name}")
+
+
 def write_out(df, path, verbose=True, **kwargs):
     kwargs.setdefault("index", False)
     kwargs.setdefault("sep", "\t")
