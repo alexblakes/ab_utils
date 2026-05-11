@@ -71,3 +71,6 @@ pdc.set_format(precision=4, use_emojis=False)
 # In terminal, send pandas checks to the logger instead of stdout
 if pd.core.config_init.is_terminal():
     pdc.set_custom_print_fn(logger.info, print_to_stdout=False)
+
+# Pandas
+pd.set_option("display.precision", 4)
