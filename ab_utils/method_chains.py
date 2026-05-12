@@ -1,3 +1,4 @@
+import inspect
 import logging
 from pathlib import Path
 
@@ -67,5 +68,5 @@ def write(df, path, verbose=True, **kwargs):
     return df
 
 def add_global(df, var_name):
-    globals()[var_name] = df
+    inspect.currentframe().f_back.f_globals[var_name] = df
     return df
