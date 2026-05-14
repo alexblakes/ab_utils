@@ -66,10 +66,3 @@ def write(df, path, verbose=True, **kwargs):
     df.check.nrows(check_name="Output lines").to_csv(path, **kwargs)
 
     return df
-<<<<<<< HEAD
-
-def add_global(df, var_name):
-    inspect.currentframe().f_back.f_globals[var_name] = df
-    return df
-=======
->>>>>>> parent of 9672e9e (Add global method)
