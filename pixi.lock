@@ -151,7 +151,7 @@ packages:
 - pypi: ./
   name: ab-utils
   version: 0.0.1
-  sha256: a647b69e42e4d060b8d26f4e7413440088237c105570e830f8b9c6768cfa4b56
+  sha256: 5eba3328c117afd80871215665004aee9bf2b0a8849de8a94fdf1a5b88c8ac00
   requires_dist:
   - matplotlib
   - numpy

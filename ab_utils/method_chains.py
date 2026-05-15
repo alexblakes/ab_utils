@@ -1,5 +1,5 @@
-import inspect
 import logging
+import sys
 from pathlib import Path
 
 import pandas as pd
@@ -43,7 +43,9 @@ def read(path, verbose=True, **kwargs):
     if verbose:
         logger.info(f"Reading from {path}")
 
-    return pd.read_csv(path, **kwargs).check.nrows(check_name=f"Input lines in {path.name}")
+    return pd.read_csv(path, **kwargs).check.nrows(
+        check_name=f"Input lines in {path.name}"
+    )
 
 
 def write(df, path, verbose=True, **kwargs):
@@ -65,4 +67,9 @@ def write(df, path, verbose=True, **kwargs):
 
     df.check.nrows(check_name="Output lines").to_csv(path, **kwargs)
 
+    return df
+
+
+def add_global(df, name):
+    sys.modules["__main__"].__dict__[name] = df
     return df
