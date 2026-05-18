@@ -26,7 +26,10 @@ def assign_with_apply(df, fn, new_cols, *args, **kwargs):
 def assign_from_split(df, col, sep, new_col_names, **kwargs):
     return df.assign(
         **pd.DataFrame(
-            df[col].str.split(sep), columns=new_col_names, index=df.index, **kwargs
+            df[col].str.split(sep).tolist(),
+            columns=new_col_names,
+            index=df.index,
+            **kwargs,
         )
     )
 
