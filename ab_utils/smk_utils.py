@@ -166,3 +166,14 @@ def inject_snakemake(
             **wildcards,
         )
     return snakemake
+
+
+def log_path(script: str, snakefile: str) -> str:
+    """Return a log file path derived from the rule's script name.
+
+    Pass workflow.snakefile as the second argument from within a Snakefile.
+    """
+    snakefile_dir = Path(snakefile).parent.relative_to(Path.cwd())
+    dot_path = ".".join(snakefile_dir.parts)
+    script_stem = Path(script).stem
+    return f"log/{dot_path}.{script_stem}.log"
