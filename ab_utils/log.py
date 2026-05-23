@@ -30,6 +30,7 @@ def get_calling_fn(*ignore: str) -> str | None:
 
     return None
 
+
 # Logging setup
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
@@ -51,11 +52,12 @@ logger.addHandler(stream_handler)
 # Set up logging via Snakemake if possible
 try:
     from snakemake.script import snakemake
+
     logger.info("Running from Snakemake.")
     file_log = Path(snakemake.log[0])
-except (ImportError):
+except ImportError:
     logger.info("Running outside Snakemake. Logging to stderr only.")
-except (IndexError):
+except IndexError:
     logger.warning("No Snakemake log file detected. Logging only to stderr.")
 else:
     file_handler = logging.FileHandler(file_log, mode="w")

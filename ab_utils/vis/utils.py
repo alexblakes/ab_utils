@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from statannotations.Annotator import Annotator
 
 
 def rotate_tick_labels(axis, ax=None, **kwargs):

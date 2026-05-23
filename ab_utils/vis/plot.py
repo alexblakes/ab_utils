@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 
 
 def boxplot(
@@ -122,10 +121,12 @@ def grouped_vertical_bar(
             *args,
             **kwargs,
         )
-        if not bar_label_fmt is None:
+        if bar_label_fmt is not None:
             ax.bar_label(bars, fmt=bar_label_fmt)
 
-    tick_positions = left_bar_positions + (bar_width * (n_clusters - 2) / 2) #- (bar_width/2)
+    tick_positions = left_bar_positions + (
+        bar_width * (n_clusters - 2) / 2
+    )  # - (bar_width/2)
     ax.set_xticks(tick_positions, labels=labels)
 
     return ax
