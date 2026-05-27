@@ -9,4 +9,4 @@ from .method_chains import (
     read,
     write,
 )
-from .smk_utils import inject_snakemake
+from .smk import inject_snakemake
