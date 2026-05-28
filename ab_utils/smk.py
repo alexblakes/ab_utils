@@ -149,10 +149,9 @@ def mock_snakemake(
 
 
 def get_rule_name():
-    import inspect
+    import sys
 
-    caller_frame = inspect.stack()[1][0]
-    file = Path(inspect.getfile(caller_frame))
+    file = Path(sys.modules["__main__"].__file__)
 
     file_name = file.stem
     parent_dir = file.parent.name
