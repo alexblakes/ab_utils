@@ -148,20 +148,8 @@ def mock_snakemake(
     return snakemake
 
 
-def get_rule_name():
-    import inspect
-
-    caller_frame = inspect.stack()[1][0]
-    file = Path(inspect.getfile(caller_frame))
-
-    file_name = file.stem
-    parent_dir = file.parent.name
-
-    return f"{parent_dir}_{file_name}"
-
-
 def inject_snakemake(
-    rulename=get_rule_name(),
+    rulename,
     rootdir=Path.cwd(),
     configfiles=None,
     submodule_dir="./workflow",

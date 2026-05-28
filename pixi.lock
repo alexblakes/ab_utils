@@ -150,8 +150,8 @@ packages:
   timestamp: 1764092507920
 - pypi: ./
   name: ab-utils
-  version: 0.0.2
-  sha256: 35db3903c542e29987dbdfcdc595e2ae1eb4a2de3d9854b05af4b8b0cdb055bf
+  version: 0.0.1
+  sha256: 5eba3328c117afd80871215665004aee9bf2b0a8849de8a94fdf1a5b88c8ac00
   requires_dist:
   - matplotlib
   - numpy
