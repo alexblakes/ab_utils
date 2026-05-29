@@ -46,12 +46,10 @@ def read(path, verbose=True, **kwargs):
     if verbose:
         logger.info(f"Reading from {path}")
 
-    return pd.read_csv(path, **kwargs).check.nrows(
-        msg=f"Input lines in {path.name}"
-    )
+    return pd.read_csv(path, **kwargs).check.nrows(msg=f"Input lines in {path.name}")
 
 
-def write(df, path, verbose=True, **kwargs):
+def write(df, path, verbose=True, fn=lambda x: x, **kwargs):
     kwargs.setdefault("index", False)
     kwargs.setdefault("sep", "\t")
 
@@ -68,7 +66,7 @@ def write(df, path, verbose=True, **kwargs):
     if verbose:
         logger.info(f"Writing to {path}")
 
-    df.check.nrows(msg="Output lines").to_csv(path, **kwargs)
+    df.pipe(fn).check.nrows(msg="Output lines").to_csv(path, **kwargs)
 
     return df
 
