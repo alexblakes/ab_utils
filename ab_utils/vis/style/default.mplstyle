@@ -75,15 +75,12 @@ font.family: sans-serif
 font.sans-serif: dejavusans, Arial, Helvetica, Lucida Grande, Verdana, Geneva, Lucid, Avant Garde, sans-serif
 mathtext.fontset : dejavusans
 
+# Font type
 # SVG export now doesn't render font as path, but saves fonts as text objects.
-# This allows for easier integration with MS Office.
 # See suggestions at https://jaewonchung.me/research/technical/Useful-Matplotlib-tricks-for-research/#avoiding-type-3-fonts
 svg.fonttype : none
+pdf.fonttype : 42
+ps.fonttype : 42
 
 # Make SVG generation deterministic
 svg.hashsalt : 42
-
-# Avoid type 3 font usage
-pdf.fonttype : 42
-svg.fonttype : path
-ps.fonttype : 42
