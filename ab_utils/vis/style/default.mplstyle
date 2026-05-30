@@ -72,11 +72,12 @@ ytick.minor.pad : 1
 
 # Font Family
 font.family: sans-serif
-font.sans-serif: Arial, Helvetica, Lucida Grande, Verdana, Geneva, Lucid, Avant Garde, sans-serif
+font.sans-serif: dejavusans, Arial, Helvetica, Lucida Grande, Verdana, Geneva, Lucid, Avant Garde, sans-serif
 mathtext.fontset : dejavusans
 
 # SVG export now doesn't render font as path, but saves fonts as text objects.
 # This allows for easier integration with MS Office.
+# See suggestions at https://jaewonchung.me/research/technical/Useful-Matplotlib-tricks-for-research/#avoiding-type-3-fonts
 svg.fonttype : none
 
 # Make SVG generation deterministic
