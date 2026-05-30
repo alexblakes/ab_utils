@@ -9,7 +9,7 @@
 # 89mm (single column), 120mm (medium), 180mm (double column)
 # 3.5" (single column), 4.72" (medium), 7.09" (double column)
 # To convert mm to inches, divide by 25.4
-figure.figsize : 3.5, 3
+figure.figsize : 3.5, 3.5
 ##figure.dpi : 350
 
 # Set x axis
@@ -49,12 +49,13 @@ legend.handlelength : 1
 legend.handletextpad : 0.5
 legend.labelcolor: markeredgecolor # linecolor, markerfacecolor
 
-# Always save as 'tight'
+# Saving figures
 savefig.bbox : tight
 savefig.pad_inches : 0.01  # Use virtually all space when we specify figure dimensions
+savefig.dpi : 300
 
 # Font sizes
-font.size: 7
+font.size: 8
 axes.titlesize: medium
 axes.labelsize: medium
 xtick.labelsize: medium
@@ -83,4 +84,5 @@ svg.hashsalt : 42
 
 # Avoid type 3 font usage
 pdf.fonttype : 42
+svg.fonttype : path
 ps.fonttype : 42
