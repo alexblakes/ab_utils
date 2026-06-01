@@ -8,5 +8,6 @@ from .method_chains import (
     assign_from_split,
     read,
     write,
+    add_global
 )
 from .smk import inject_snakemake
