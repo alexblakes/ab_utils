@@ -175,6 +175,6 @@ def log_path(script: str, snakefile: str) -> str:
     """
     snakefile_dir = Path(snakefile).parent.relative_to(Path.cwd())
     dot_path = ".".join(snakefile_dir.parts)
-    timestamp = datetime.now().strftime("%f")
+    timestamp = datetime.now().isoformat(timespec="microseconds")
     script_stem = Path(script).stem
     return f"log/{dot_path}.{timestamp}.{script_stem}.log"
