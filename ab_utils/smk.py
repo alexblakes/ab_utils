@@ -1,8 +1,8 @@
 import logging
+from datetime import datetime
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
-
 
 def mock_snakemake(
     rulename,
@@ -175,5 +175,6 @@ def log_path(script: str, snakefile: str) -> str:
     """
     snakefile_dir = Path(snakefile).parent.relative_to(Path.cwd())
     dot_path = ".".join(snakefile_dir.parts)
+    timestamp = datetime.now().isoformat(timespec="nanoseconds")
     script_stem = Path(script).stem
-    return f"log/{dot_path}.{script_stem}.log"
+    return f"log/{dot_path}.{timestamp}.{script_stem}.log"
