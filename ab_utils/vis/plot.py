@@ -107,7 +107,6 @@ def grouped_vertical_bar(
         err_values = None
         if err_columns:
             err_values = data[err_columns].values.transpose()
-            print(err_values)
 
         if color:
             kwargs.update(color=color)

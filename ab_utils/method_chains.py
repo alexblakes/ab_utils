@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 def flatten_columns(df):
+    df = df.copy()
     df.columns = ["_".join(map(str, col)) for col in df.columns.to_flat_index()]
     return df
 
@@ -58,7 +59,7 @@ def write(df, path, verbose=True, fn=lambda x: x, **kwargs):
         path = path.relative_to(Path.cwd())
     except ValueError:
         logger.warning(
-            f"Path '{path}' is not relative to the current working directory."
+            f"Path '{path}' is not relative to the current working directory. "
             "Using absolute path instead."
         )
         pass

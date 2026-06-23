@@ -14,13 +14,10 @@ dependencies = [
     "pandas-checks",
     "statannotations",
 ]
-dynamic = ["readme"]
+readme = "README.md"
 
-[tool.setuptools.dynamic]
-readme = {file = ["README.md"], content-type = "text/markdown"}
-
-[tool.setuptools.package-data]
-"ab_utils.vis.style" = ["*.mplstyle"]
+[tool.hatch.build.targets.wheel]
+include = ["ab_utils/**"]
 
 [tool.pixi.workspace]
 channels = ["conda-forge", "bioconda"]

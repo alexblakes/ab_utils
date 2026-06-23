@@ -1,5 +1,3 @@
-import matplotlib.pyplot as plt
-
 from . import log
 from . import vis
 from .method_chains import (
