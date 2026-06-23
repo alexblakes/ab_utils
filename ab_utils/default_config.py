@@ -14,6 +14,7 @@ import logging
 import sys
 from pathlib import Path
 
+from matplotlib import cm
 import matplotlib.pyplot as plt
 import pandas as pd
 import pandas_checks as pdc
@@ -66,3 +67,8 @@ pd.set_option("display.precision", 4)
 
 # Matplotlib
 plt.style.use("ab_utils.vis.style.default")
+
+# Colours
+RED = cm.Reds(0.8)
+BLUE = cm.Blues(0.8)
+    
