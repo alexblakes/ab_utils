@@ -62,7 +62,7 @@ def boxplot(
             ax.boxplot(
                 y,
                 positions=[i],
-                labels=[label],
+                tick_labels=[label],
                 showbox=False,
                 showcaps=False,
                 showmeans=False,
@@ -70,7 +70,7 @@ def boxplot(
                 medianprops=dict(linestyle="None"),
             )
         else:
-            ax.boxplot(y, positions=[i], labels=[label], **boxplot_kwargs)
+            ax.boxplot(y, positions=[i], tick_labels=[label], **boxplot_kwargs)
 
     return ax
 
