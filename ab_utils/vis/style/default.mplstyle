@@ -33,6 +33,7 @@ ytick.right : False
 # Axes properties
 axes.spines.top : False
 axes.spines.right : False
+axes.axisbelow : True
 
 # Lines and markers
 axes.linewidth : 0.5
